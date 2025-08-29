@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8xv832042bbn"]
+
+[ext_resource type="Texture2D" uid="uid://63086lgadaxd" path="res://assets/horizontal desert al.png" id="1_cktii"]
+[ext_resource type="Script" uid="uid://wyb2wlkiy63m" path="res://scenes/planet.gd" id="1_h8ms6"]
+
+[node name="Planet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8ms6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00134, 1)
+texture = ExtResource("1_cktii")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftButtons" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BarButton" type="Button" parent="HBoxContainer/LeftButtons"]
+layout_mode = 2
+focus_mode = 0
+text = "Bar
+"
+
+[node name="TradingButton" type="Button" parent="HBoxContainer/LeftButtons"]
+layout_mode = 2
+focus_mode = 0
+text = "Trading
+"
+
+[node name="CentralVBox" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopSpacer" type="Control" parent="HBoxContainer/CentralVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MiddleSpacer" type="Control" parent="HBoxContainer/CentralVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentLabel" type="PanelContainer" parent="HBoxContainer/CentralVBox"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/CentralVBox/ContentLabel"]
+layout_mode = 2
+
+[node name="RightButtons" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="RefuelButton" type="Button" parent="HBoxContainer/RightButtons"]
+layout_mode = 2
+focus_mode = 0
+text = "Refuel"
+
+[node name="TakeoffButton" type="Button" parent="HBoxContainer/RightButtons"]
+layout_mode = 2
+focus_mode = 0
+text = "Takeoff"
