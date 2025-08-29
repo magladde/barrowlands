@@ -19,10 +19,6 @@ func _ship_movement(delta):
 	if Input.is_action_pressed("thrust"):
 		velocity = velocity + (Vector2.UP.rotated(rotation) * thrust * delta)
 		
-	if Input.is_action_just_pressed("rotate_ship"):
-		rotation = lerp_angle(rotation, -rotation, rotation_speed)
-		
-
 	if Input.is_action_pressed("brake"):
 		braking = true
 

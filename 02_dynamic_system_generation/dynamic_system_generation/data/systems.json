@@ -1,0 +1,9 @@
+{
+  "sol": {
+	"background": "res://assets/sol/background.png",
+	"planet": {
+	  "sprite": "res://assets/planet03.png",
+	  "position": [200, 0]
+	}
+  }
+}

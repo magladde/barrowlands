@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqmvfd0y675ut"]
+[gd_scene load_steps=8 format=3 uid="uid://bqmvfd0y675ut"]
 
 [ext_resource type="Texture2D" uid="uid://8hv5vhg6v0" path="res://assets/choose_screen_background.png" id="1_k8l0m"]
+[ext_resource type="PackedScene" uid="uid://b1dtnt2yw22f2" path="res://scenes/ship.tscn" id="2_wewfs"]
+[ext_resource type="Script" uid="uid://dkfdmh4po4tbl" path="res://scenes/area_2d.gd" id="3_j2epw"]
+[ext_resource type="Texture2D" uid="uid://cdx4x1v5myl7h" path="res://assets/light4.png" id="3_mdbrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wewfs"]
 size = Vector2(3070, 24)
@@ -8,9 +11,13 @@ size = Vector2(3070, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdbrl"]
 size = Vector2(27, 3050)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2epw"]
+radius = 104.043
+
 [node name="ChoosePlanet" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.258824, 0.498039, 1, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_k8l0m")
@@ -32,3 +39,33 @@ shape = SubResource("RectangleShape2D_mdbrl")
 [node name="RightBoundary" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(3001, 1523)
 shape = SubResource("RectangleShape2D_mdbrl")
+
+[node name="PlanetOne" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PlanetOne"]
+position = Vector2(1036, 1466)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_mdbrl")
+
+[node name="Area2D" type="Area2D" parent="PlanetOne"]
+script = ExtResource("3_j2epw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetOne/Area2D"]
+position = Vector2(1036, 1465)
+shape = SubResource("CircleShape2D_j2epw")
+
+[node name="Label" type="Label" parent="PlanetOne"]
+offset_left = 903.0
+offset_top = 1230.0
+offset_right = 1116.0
+offset_bottom = 1343.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Planet One Warp Point
+"
+
+[node name="Ship" parent="." instance=ExtResource("2_wewfs")]
+z_index = 1
+position = Vector2(1500, 1500)
+
+[connection signal="body_entered" from="PlanetOne/Area2D" to="PlanetOne/Area2D" method="_on_body_entered"]
