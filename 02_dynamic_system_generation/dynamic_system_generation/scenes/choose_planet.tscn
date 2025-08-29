@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://bqmvfd0y675ut"]
+[gd_scene load_steps=4 format=3 uid="uid://bqmvfd0y675ut"]
+
+[ext_resource type="Texture2D" uid="uid://8hv5vhg6v0" path="res://assets/choose_screen_background.png" id="1_k8l0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wewfs"]
+size = Vector2(3070, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdbrl"]
+size = Vector2(27, 3050)
 
 [node name="ChoosePlanet" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_k8l0m")
+
+[node name="Boundaries" type="StaticBody2D" parent="."]
+
+[node name="TopBoundary" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(1502, 2)
+shape = SubResource("RectangleShape2D_wewfs")
+
+[node name="BottomBoundary" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(1504, 3000)
+shape = SubResource("RectangleShape2D_wewfs")
+
+[node name="LeftBoundary" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(3.5, 1515)
+shape = SubResource("RectangleShape2D_mdbrl")
+
+[node name="RightBoundary" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(3001, 1523)
+shape = SubResource("RectangleShape2D_mdbrl")
