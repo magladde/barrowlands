@@ -1,9 +1,18 @@
 {
-  "sol": {
-	"background": "res://assets/sol/background.png",
-	"planet": {
-	  "sprite": "res://assets/planet03.png",
-	  "position": [200, 0]
+	"sol": {
+		"background": "res://assets/sol/background.png",
+		"planet": {
+			"sprite": "res://assets/sol/planet03.png",
+			"position": [200, 0],
+			"global_scale": 0.2
+		}
+	},
+	"vega": {
+		"background": "res://assets/vega/background.png",
+		"planet": {
+			"sprite": "res://assets/vega/planet07.png",
+			"position": [100, 100],
+			"global_scale": 0.6
+		}
 	}
-  }
 }
