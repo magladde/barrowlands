@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://brnowinxwvajx"]
+
+[ext_resource type="Script" uid="uid://pm6el5x36k7a" path="res://signal_demo.gd" id="1_fdta1"]
+[ext_resource type="Script" uid="uid://cuhwpgi3vouxe" path="res://ship.gd" id="2_amfvl"]
+[ext_resource type="Texture2D" uid="uid://diiwny5w4c68" path="res://icon.svg" id="3_8dw2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdta1"]
+size = Vector2(458, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmjdq"]
+size = Vector2(130, 130)
+
+[node name="SignalDemo" type="Node2D"]
+script = ExtResource("1_fdta1")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="UI"]
+offset_left = 218.0
+offset_top = 240.0
+offset_right = 345.0
+offset_bottom = 271.0
+text = "This is a button"
+
+[node name="Trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(629, 348)
+shape = SubResource("RectangleShape2D_fdta1")
+
+[node name="Ship" type="CharacterBody2D" parent="."]
+script = ExtResource("2_amfvl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ship"]
+texture = ExtResource("3_8dw2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
+shape = SubResource("RectangleShape2D_lmjdq")
