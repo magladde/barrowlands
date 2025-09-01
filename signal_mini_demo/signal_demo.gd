@@ -20,7 +20,10 @@ func _on_button_pressed():
 	print("button pressed")
 
 func _on_body_entered_trigger(body: Node2D) -> void:
+	if body.name != "Ship":
+		pass
 	print("something entered the collision shape")
+	# emit a signal "landed" and pass the planet_name argument
 	emit_signal("landed", "Demo Planet")
 	
 func _on_landed(planet_name: String) -> void:
