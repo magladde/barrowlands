@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbws6k1hu42i0"]
+
+[ext_resource type="Script" uid="uid://bepdlgtu0jo56" path="res://scenes/SystemButton.gd" id="1_jsick"]
+[ext_resource type="Script" uid="uid://ckpsmftiile0e" path="res://scenes/Button.gd" id="2_yonrh"]
+
+[node name="SystemButton" type="Control"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_jsick")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "test_text
+"
+script = ExtResource("2_yonrh")
