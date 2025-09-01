@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=3 uid="uid://b32h1o2w0n1bt"]
+
+[ext_resource type="Script" uid="uid://cxo5nq5lqj3e1" path="res://galaxy_map.gd" id="1_bq8kf"]
+[ext_resource type="Texture2D" uid="uid://cdd6qf8ebeetx" path="res://assets/start_tile_256.png" id="1_uw20o"]
+[ext_resource type="Texture2D" uid="uid://hgdjrqxjf555" path="res://assets/circle_small.png" id="2_cmydt"]
+[ext_resource type="Script" uid="uid://blbnxanubpd57" path="res://sol.gd" id="4_bq8kf"]
+
+[node name="GalaxyMap" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bq8kf")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = -38.0
+offset_top = -54.0
+offset_right = 1962.0
+offset_bottom = 1164.0
+texture = ExtResource("1_uw20o")
+stretch_mode = 1
+
+[node name="SystemContainer" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Sol" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/Sol"]
+offset_left = 463.0
+offset_top = 496.0
+offset_right = 503.0
+offset_bottom = 536.0
+tooltip_text = "
+"
+toggle_mode = true
+texture_normal = ExtResource("2_cmydt")
+
+[node name="Label" type="Label" parent="SystemContainer/Sol"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 513.0
+offset_right = 506.0
+offset_bottom = 536.0
+text = "Sol"
+
+[node name="Vega" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/Vega"]
+offset_left = 510.0
+offset_top = 425.0
+offset_right = 550.0
+offset_bottom = 465.0
+tooltip_text = "
+"
+toggle_mode = true
+texture_normal = ExtResource("2_cmydt")
+
+[node name="Label" type="Label" parent="SystemContainer/Vega"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 431.0
+offset_right = 571.0
+offset_bottom = 454.0
+text = "Vega"
+
+[node name="Helix Station" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/Helix Station"]
+offset_left = 592.0
+offset_top = 387.0
+offset_right = 632.0
+offset_bottom = 427.0
+tooltip_text = "
+"
+toggle_mode = true
+texture_normal = ExtResource("2_cmydt")
+
+[node name="Label" type="Label" parent="SystemContainer/Helix Station"]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 385.0
+offset_right = 716.0
+offset_bottom = 408.0
+text = "Helix Station"
+
+[node name="AlphaCentauri" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/AlphaCentauri"]
+offset_left = 550.0
+offset_top = 325.0
+offset_right = 590.0
+offset_bottom = 365.0
+tooltip_text = "
+"
+toggle_mode = true
+texture_normal = ExtResource("2_cmydt")
+
+[node name="Label" type="Label" parent="SystemContainer/AlphaCentauri"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 299.0
+offset_right = 670.0
+offset_bottom = 322.0
+text = "Alpha Centauri"
+
+[node name="JumpLineContainer" type="Node2D" parent="."]
+
+[node name="sol <-> vega" type="Line2D" parent="JumpLineContainer"]
+z_index = -2
+points = PackedVector2Array(515, 438, 475, 499)
+width = 3.0
+
+[node name="vega <-> alpha centarui" type="Line2D" parent="JumpLineContainer"]
+z_index = -2
+position = Vector2(45, -97)
+points = PackedVector2Array(511, 437, 476, 525)
+width = 3.0
+
+[node name="helix station <-> alpha centarui2" type="Line2D" parent="JumpLineContainer"]
+z_index = -2
+position = Vector2(45, -97)
+points = PackedVector2Array(513, 437, 553, 486)
+width = 3.0
+
+[node name="helix station <-> vega" type="Line2D" parent="JumpLineContainer"]
+z_index = -2
+position = Vector2(41, -86)
+points = PackedVector2Array(484, 519, 554, 486)
+width = 3.0
+
+[node name="SwitchCurrentSystemButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 265.0
+offset_right = 497.0
+offset_bottom = 401.0
+
+[node name="Sol" type="Button" parent="SwitchCurrentSystemButtons"]
+layout_mode = 2
+text = "Current System: Sol"
+script = ExtResource("4_bq8kf")
+
+[node name="Vega" type="Button" parent="SwitchCurrentSystemButtons"]
+layout_mode = 2
+text = "Current System: Vega"
+
+[node name="Alpha Centauri" type="Button" parent="SwitchCurrentSystemButtons"]
+layout_mode = 2
+text = "Current System: Alpha Centauri"
+
+[node name="Helix Station" type="Button" parent="SwitchCurrentSystemButtons"]
+layout_mode = 2
+text = "Current System: Helix Station"
