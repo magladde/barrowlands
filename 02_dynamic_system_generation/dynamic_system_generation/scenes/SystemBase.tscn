@@ -4,6 +4,7 @@
 
 [node name="SystemBase" type="Node2D"]
 script = ExtResource("1_h83n3")
+system_id = "sol"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

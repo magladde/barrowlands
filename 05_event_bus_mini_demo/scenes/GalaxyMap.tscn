@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://5bd1mbfivtf1"]
+
+[ext_resource type="Script" uid="uid://dc8le8nyswcc5" path="res://scenes/GalaxyMap.gd" id="1_vb5qq"]
+[ext_resource type="Texture2D" uid="uid://d35s0laa0h88j" path="res://assets/start_tile_256.png" id="2_67rla"]
+[ext_resource type="Texture2D" uid="uid://co5wsdsbgum78" path="res://assets/circle_small_deactive.png" id="3_7r4jv"]
+[ext_resource type="PackedScene" uid="uid://dbws6k1hu42i0" path="res://scenes/SystemButton.tscn" id="4_dgfha"]
+
+[node name="GalaxyMap" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vb5qq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1500.0
+texture = ExtResource("2_67rla")
+stretch_mode = 1
+
+[node name="SystemContainer" type="Node2D" parent="."]
+position = Vector2(212, 169)
+
+[node name="sol" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 270.0
+offset_top = 284.0
+offset_right = 310.0
+offset_bottom = 324.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/sol"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_7r4jv")
+
+[node name="Label" type="Label" parent="SystemContainer/sol"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -7.0
+offset_right = 12.0
+offset_bottom = 16.0
+text = "sol"
+
+[node name="vega" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 270.0
+offset_top = 182.0
+offset_right = 310.0
+offset_bottom = 222.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/vega"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_7r4jv")
+
+[node name="Label" type="Label" parent="SystemContainer/vega"]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -14.0
+offset_right = -1.0
+offset_bottom = 9.0
+text = "vega"
+
+[node name="alpha_centauri" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 366.0
+offset_top = 121.0
+offset_right = 406.0
+offset_bottom = 161.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/alpha_centauri"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_7r4jv")
+
+[node name="Label" type="Label" parent="SystemContainer/alpha_centauri"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -31.0
+offset_right = 126.0
+offset_bottom = -8.0
+text = "alpha_centauri"
+
+[node name="helix_station" type="Control" parent="SystemContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 386.0
+offset_top = 221.0
+offset_right = 426.0
+offset_bottom = 261.0
+
+[node name="Icon" type="TextureButton" parent="SystemContainer/helix_station"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_7r4jv")
+
+[node name="Label" type="Label" parent="SystemContainer/helix_station"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -31.0
+offset_right = 126.0
+offset_bottom = -8.0
+text = "helix_station"
+
+[node name="SelectCurrentSystem" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 80.0
+offset_right = 494.0
+offset_bottom = 219.0
+
+[node name="Label" type="Label" parent="SelectCurrentSystem"]
+layout_mode = 2
+text = "Choose active system:"
+
+[node name="sol" parent="SelectCurrentSystem" instance=ExtResource("4_dgfha")]
+layout_mode = 2
+
+[node name="vega" parent="SelectCurrentSystem" instance=ExtResource("4_dgfha")]
+layout_mode = 2
+
+[node name="helix_station" parent="SelectCurrentSystem" instance=ExtResource("4_dgfha")]
+layout_mode = 2
+
+[node name="alpha_centauri" parent="SelectCurrentSystem" instance=ExtResource("4_dgfha")]
+layout_mode = 2
