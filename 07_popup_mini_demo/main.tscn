@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://uw1xl1ri67s7"]
+
+[ext_resource type="Script" uid="uid://cd5lhv8grnxtr" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://64qp5xcv8677" path="res://button.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dr1tpbffoc8s" path="res://icon.svg" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://dacpbvmwm02gq" path="res://sprite_2d.gd" id="4_lquwl"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-6, -1)
+script = ExtResource("1_ig7tw")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 222.0
+offset_top = 149.0
+offset_right = 230.0
+offset_bottom = 157.0
+script = ExtResource("2_0xm2m")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+process_mode = 2
+size = Vector2i(287, 100)
+visible = true
+
+[node name="Node" type="Control" parent="PopupPanel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 283.0
+offset_bottom = 96.0
+
+[node name="Label" type="Label" parent="PopupPanel/Node"]
+process_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 283.0
+offset_bottom = 96.0
+text = "Enemy is attacking, get to your ship."
+
+[node name="CloseButton" type="Button" parent="PopupPanel/Node/Label"]
+process_mode = 2
+offset_top = 21.0
+offset_right = 279.0
+offset_bottom = 113.0
+text = "Click here to close"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(75, 333)
+texture = ExtResource("3_1bvp3")
+script = ExtResource("4_lquwl")
