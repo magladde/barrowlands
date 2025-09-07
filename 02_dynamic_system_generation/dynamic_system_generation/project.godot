@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="dynamic_system_generation"
+config/name="02_dynamic_system_generation"
 run/main_scene="uid://w3e0n60j0n32"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"

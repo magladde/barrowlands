@@ -1,0 +1,23 @@
+{
+  "sol": {
+	"background": "res://assets/sol/background.png",
+	"pois": [
+	  {
+		"id": "sol",
+		"sprite": "res://assets/sol/planet03.png",
+		"position": [1000, 2500],
+		"global_scale": 0.4,
+		"type": "planet",
+		"faction": "Core Authority"
+	  },
+	  {
+		"id": "raider_station",
+		"sprite": "res://assets/sol/satellite_A.png",
+		"position": [15000, 18000],
+		"global_scale": 1,
+		"type": "space_station",
+		"faction": "Grithari"
+	  }
+	]
+  }
+}

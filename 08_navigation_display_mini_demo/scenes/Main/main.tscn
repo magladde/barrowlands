@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk8qkpioqakhi"]
+
+[ext_resource type="Script" uid="uid://cuqc0s28ke2cx" path="res://scenes/Main/main.gd" id="1_gol0p"]
+[ext_resource type="PackedScene" uid="uid://d1r1rlmula8y8" path="res://scenes/Ship/Ship.tscn" id="2_br8qb"]
+[ext_resource type="Script" uid="uid://dardd8uamg0r7" path="res://scenes/Main/hud.gd" id="3_8gcrf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gol0p")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ship" parent="." instance=ExtResource("2_br8qb")]
+z_index = 1
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_8gcrf")
+
+[node name="POILabel" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[node name="POIArrowContainer" type="Node2D" parent="HUD"]
+
+[node name="DisanceLabel" type="Label" parent="HUD/POIArrowContainer"]
+offset_left = 423.0
+offset_top = 191.0
+offset_right = 489.0
+offset_bottom = 214.0
+text = "distance"
+
+[node name="POIArrow" type="Sprite2D" parent="HUD/POIArrowContainer"]
+scale = Vector2(0.3, 0.3)
