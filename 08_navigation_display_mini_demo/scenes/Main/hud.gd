@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var container: Node2D = $POIArrowContainer
+@onready var container: Control = $POIArrowContainer
 @onready var arrow: Sprite2D = $POIArrowContainer/POIArrow
 @onready var distance_label: Label = $POIArrowContainer/DisanceLabel
 
@@ -14,7 +14,6 @@ func _ready() -> void:
 	arrow.centered = true
 	arrow.rotation = 0.0
 	container.visible = false  # hide until we have valid targets
-	distance_label.position = Vector2(0, 40)
 
 
 func set_player(p: Node2D) -> void:
@@ -40,10 +39,6 @@ func _process(delta: float) -> void:
 		return
 
 	container.visible = true
-
-	# 1) Keep the container fixed at the right-center of the screen
-	var rect := get_viewport().get_visible_rect()
-	container.position = Vector2(rect.size.x - 150.0, rect.size.y * 0.5)  # 50 px inset from right edge
 
 	# 2) Rotate the arrow to face from player toward POI
 	var dir := (current_poi.global_position - player.global_position)
